@@ -2,5 +2,5 @@
 
 TODAY=$(date +'%Y-%m-%d')
 
-git add "${TODAY}"
+git add "problems/${TODAY}"
 git commit -m "${TODAY}: completed"
