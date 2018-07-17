@@ -1,19 +1,25 @@
 package main
 
-import "testing"
-
-var testCases = []struct {
-	name string
-	in   interface{}
-	out  interface{}
-}{}
+import (
+	"fmt"
+	"strconv"
+	"testing"
+)
 
 func Test(t *testing.T) {
-	for _, tc := range testCases {
-		t.Run(tc.name, func(t *testing.T) {
-			res := solution(tc.in)
-			if res != tc.out {
-				t.Fatalf("expected %v, got %v", tc.out, res)
+	for n := 1; n <= 10; n++ {
+		t.Run(fmt.Sprintf("%d", n), func(t *testing.T) {
+			l := NewLog(n)
+			for i := 1; i <= 10; i++ {
+				l.Record(strconv.Itoa(i))
+			}
+
+			for i := 0; i < n; i++ {
+				res := l.GetLast(i)
+				expected := strconv.Itoa(10 - i)
+				if res != expected {
+					t.Logf("expected %s, got %s", expected, res)
+				}
 			}
 		})
 	}
