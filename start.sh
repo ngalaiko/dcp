@@ -12,4 +12,4 @@ fi
 git add "${DIR}"
 git commit -m "${TODAY}: started"
 
-vim "${DIR}/main.go"
+nvim "${DIR}/main.go"
