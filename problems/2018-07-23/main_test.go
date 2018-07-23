@@ -22,7 +22,7 @@ var testCases = []struct {
 	{
 		name:     "example 2",
 		inString: "bedbathandbeyond",
-		inWords:  []string{},
+		inWords:  []string{"bed", "bath", "bedbath", "and", "beyond"},
 		out: [][]string{
 			[]string{"bed", "bath", "and", "beyond"},
 			[]string{"bedbath", "and", "beyond"},
