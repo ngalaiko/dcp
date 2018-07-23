@@ -6,6 +6,6 @@ func main() {
 	fmt.Println("Hello, world!")
 }
 
-func solution(v interface{}) interface{} {
+func solution(s string, ww []string) [][]string {
 	return nil
 }
