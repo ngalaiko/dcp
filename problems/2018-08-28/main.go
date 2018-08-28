@@ -6,6 +6,6 @@ func main() {
 	fmt.Println("Hello, world!")
 }
 
-func solution(v interface{}) interface{} {
+func solution(maze []int[]int, start, finish []int) int {
 	return nil
 }
