@@ -20,22 +20,22 @@ type pos struct {
 	j int
 }
 
-// marks unmarked point in maze with n, and all neibors n+1
+// marks unmarked point in maze with n, and all neighbors n+1
 // return true if point was marked
 func mark(maze [][]int, point []int, n int) {
 	i, j := point[0], point[1]
 
-	neibors := map[pos]bool{
+	neighbors := map[pos]bool{
 		pos{i + 1, j}: false,
 		pos{i - 1, j}: false,
 		pos{i, j - 1}: false,
 		pos{i, j + 1}: false,
 	}
-	for p := range neibors {
-		neibors[p] = markP(maze, p.i, p.j, n+1)
+	for p := range neighbors {
+		neighbors[p] = markP(maze, p.i, p.j, n+1)
 	}
 
-	for p, ok := range neibors {
+	for p, ok := range neighbors {
 		if ok {
 			mark(maze, []int{p.i, p.j}, n+1)
 		}
