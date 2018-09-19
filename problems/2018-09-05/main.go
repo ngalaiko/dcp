@@ -24,6 +24,8 @@ func main() {
 
 	fmt.Printf("initial: \n%s\n\n", root)
 	fmt.Printf("root.left locked %t: \n%s\n\n", root.left.Lock(), root)
+	fmt.Printf("root.right locked %t: \n%s\n\n", root.right.Lock(), root)
+	fmt.Printf("root.right unlocked %t: \n%s\n\n", root.right.Unlock(), root)
 	fmt.Printf("root.left.left unlock %t: \n%s\n\n", root.left.left.Unlock(), root)
 	fmt.Printf("root.left.left lock %t: \n%s\n\n", root.left.left.Lock(), root)
 	fmt.Printf("root unlock %t: \n%s\n\n", root.Unlock(), root)
