@@ -14,14 +14,16 @@ func solution(in string) string {
 	currentChar := in[0]
 	count := 0
 	for _, c := range in {
-		switch c {
+		char := byte(c)
+		switch char {
 		case currentChar:
 			count++
 		default:
-			out.WriteString(fmt.Sprintf("%d%c"), count, currentChar)
-			currentChar = c
+			out.WriteString(fmt.Sprintf("%d%c", count, currentChar))
+			currentChar = char
 			count = 1
 		}
 	}
+	out.WriteString(fmt.Sprintf("%d%c", count, currentChar))
 	return out.String()
 }

@@ -15,7 +15,33 @@ func Test_solution(t *testing.T) {
 
 		want1 string
 	}{
-		//TODO: Add test cases
+		{
+			name: "example",
+			args: func(t *testing.T) args {
+				return args{
+					in: "AAAABBBCCDAA",
+				}
+			},
+			want1: "4A3B2C1D2A",
+		},
+		{
+			name: "one letter",
+			args: func(t *testing.T) args {
+				return args{
+					in: "AAAAAAAA",
+				}
+			},
+			want1: "8A",
+		},
+		{
+			name: "different letters",
+			args: func(t *testing.T) args {
+				return args{
+					in: "ABC",
+				}
+			},
+			want1: "1A1B1C",
+		},
 	}
 
 	for _, tt := range tests {
