@@ -10,14 +10,22 @@ func solution(aa []int) int {
 	if len(aa) == 0 {
 		return 1
 	}
-	for _, a := range aa { // try to place all numbers at same index (from 1)
+	for i := 0; i < len(aa); i++ {
+		a := aa[i]
 		if a < 0 { // we don't care, it's negative
 			continue
 		}
 		if a >= len(aa) { // we don't care, result always < len(aa)
 			continue
 		}
-		aa[a-1] = a
+		if a == aa[a-1] { // if integer on it's place, skip
+			continue
+		}
+		// put each integer on it's place
+		// decrease i, because aa[i] is a new integer now and we need to
+		// process it one more time
+		aa[i], aa[a-1] = aa[a-1], aa[i]
+		i--
 	}
 	for i := range aa { // find first missing
 		if aa[i] != i+1 {

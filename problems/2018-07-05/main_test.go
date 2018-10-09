@@ -37,6 +37,11 @@ var testCases = []struct {
 		in:   []int{-1, -2, -3, -4},
 		out:  1,
 	},
+	{
+		name: "test",
+		in:   []int{3, 2, 4, -1, 1},
+		out:  5,
+	},
 }
 
 func Test(t *testing.T) {
